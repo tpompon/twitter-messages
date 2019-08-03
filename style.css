@@ -33,7 +33,7 @@ body {
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
   .title {
-    font-size: 20px !important;
+    display: none !important;
   }
   .twitter-logo {
     width: 30px !important;
@@ -63,6 +63,12 @@ body {
 .twitter-logo:hover {
   background-color: #162D40;
   cursor: pointer;
+}
+.twitter-logo-light {
+  fill: black !important;
+}
+.twitter-logo-light:hover {
+  background-color: rgba(0, 0, 0, .03) !important;
 }
 .tagname {
   margin-left: 20px;
@@ -122,6 +128,14 @@ body {
   background-color: #303D48;
 }
 
+.light-received {
+  color: black !important;
+  background-color: #E6ECF0 !important;
+}
+.light-received:hover {
+  background-color: #DDDFE1 !important;
+}
+
 .sent {
   border-radius: 40px 40px 0px 40px;
   background-color: #1DA1F2;
@@ -146,6 +160,14 @@ body {
   background-color: #15202B;
   color: white;
   border: 1px solid #1DA1F2;
+}
+
+.message-input-light {
+  background-color: #E6ECF0 !important;
+  color: black !important;
+}
+.message-input-light:focus {
+  background-color: white !important;
 }
 
 .right { margin-left: auto }

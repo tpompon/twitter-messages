@@ -1,19 +1,21 @@
 const conversation = document.querySelector('.conversation');
 const messageInput = document.querySelector('.message-input');
 
+let theme = "dark";
+
 document.querySelector('.message-input').addEventListener('keypress', function (e) {
     var key = e.which || e.keyCode;
     if (key === 13) {
       let message = messageInput.value;
-
+      console.log(message.trim())
       if (message.startsWith('/received ') || message.startsWith('/r ')) {
         message = message.replace('/received ', '');
         message = message.replace('/r ', '');
         sendMessage(message, 'received');
       }
-      else {
-        sendMessage(message, 'sent');
-      }
+      else if (message.trim() === '/dark') { darkTheme(); }
+      else if (message.trim() === '/light') { lightTheme(); }
+      else { sendMessage(message, 'sent'); }
     }
 });
 
@@ -51,6 +53,7 @@ const sendMessage = (message, type) => {
         divMessage.classList.add('received-continuous');
         messages[messages.length - 1].parentNode.querySelector('a').remove();
       } else { divMessage.classList.add('received'); }
+      if (theme === "light") { divMessage.classList.add('light-received') }
     }
 
     a.appendChild(aText);
@@ -62,4 +65,30 @@ const sendMessage = (message, type) => {
 
     messageInput.value = '';
   }
+}
+
+const lightTheme = () => {
+  theme = "light";
+  document.querySelector('body').style.backgroundColor = "white";
+  document.querySelector('.twitter-logo').classList.add('twitter-logo-light');
+  document.querySelector('.title').style.color = "black";
+
+  const receivedMessages = document.querySelectorAll('.received, .received-continuous');
+  for (let i = 0; i < receivedMessages.length; i++) {
+    receivedMessages[i].classList.add('light-received');
+  }
+  document.querySelector('.message-input').classList.add('message-input-light');
+}
+
+const darkTheme = () => {
+  theme = "dark";
+  document.querySelector('body').style.backgroundColor = "#15202B";
+  document.querySelector('.twitter-logo').classList.remove('twitter-logo-light');
+  document.querySelector('.title').style.color = "white";
+
+  const receivedMessages = document.querySelectorAll('.received, .received-continuous');
+  for (let i = 0; i < receivedMessages.length; i++) {
+    receivedMessages[i].classList.remove('light-received');
+  }
+  document.querySelector('.message-input').classList.remove('message-input-light');
 }
