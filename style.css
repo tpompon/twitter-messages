@@ -3,6 +3,50 @@ body {
   font-family: Arial;
 }
 
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .conversation {
+    width: 100% !important;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .conversation {
+    width: 100% !important;
+  }
+  .tagname {
+    display: none !important;
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+  .title {
+    font-size: 20px !important;
+  }
+  .twitter-logo {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .conversation {
+    width: 100% !important;
+  }
+  .tagname {
+    display: none !important;
+  }
+}
+
 .title {
   color: white;
 }
