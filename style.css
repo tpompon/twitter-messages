@@ -1,0 +1,110 @@
+body {
+  background: #15202B;
+  font-family: Arial;
+}
+
+.title {
+  color: white;
+}
+.twitter-logo {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  fill: white;
+  margin-right: 20px;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  transition: .25s background-color;
+}
+.twitter-logo:hover {
+  background-color: #162D40;
+  cursor: pointer;
+}
+.tagname {
+  margin-left: 20px;
+  font-size: 18px;
+  color: gray;
+  transition: .25s color;
+}
+.tagname:hover {
+  cursor: pointer;
+  color: lightgray;
+}
+
+.left { float: left }
+.right { flot: right }
+
+.conversation {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message-container {
+  max-width: 400px;
+}
+
+.message {
+  color: white;
+  padding: 18px;
+  word-break: break-word;
+  margin-bottom: 4px;
+  transition: .25s background-color;
+}
+.message:hover { cursor: pointer; }
+
+.message-infos {
+  color: rgb(136, 153, 166);
+  margin-bottom: 10px;
+}
+.message-infos:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.received {
+  border-radius: 40px 40px 40px 0px;
+  background-color: rgb(61, 84, 102);
+}
+.received-continuous {
+  border-radius: 0px 40px 40px 0px;
+  background-color: rgb(61, 84, 102);
+}
+.received:hover, .received-continuous:hover {
+  background-color: #303D48;
+}
+
+.sent {
+  border-radius: 40px 40px 0px 40px;
+  background-color: #1DA1F2;
+}
+.sent-continuous {
+  border-radius: 40px 0px 0px 40px;
+  background-color: #1DA1F2;
+}
+.sent:hover, .sent-continuous:hover {
+  background-color: #1A91DA;
+}
+
+.message-input {
+  background-color: #253341;
+  border-radius: 40px;
+  color: #8397A3;
+  padding: 12px;
+  margin-top: 50px;
+  font-size: 16px;
+}
+.message-input:focus {
+  background-color: #15202B;
+  color: white;
+  border: 1px solid #1DA1F2;
+}
+
+.right { margin-left: auto }
+.left { margin-right: auto }
+.f-right { float: right }
+.f-left { float: left }
